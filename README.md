@@ -13,6 +13,7 @@ Utility functions for XPaths.
 recP :: String
 recP = "record"
 
+idP :: String
 idP = "identifier"
 
 recFromRootP :: String
@@ -38,6 +39,7 @@ how this might be used in practice see examples in the tests for
 recP :: String
 recP = "record"
 
+idP :: String
 idP = "identifier"
 
 recFromRootP :: String
@@ -50,6 +52,9 @@ idFromRootP = recFromRootP /? idP
 
 ```
 
+
+### Beyond Strings
+
 If you want more safety you can use an `XPath` newtype like this, instead of
 using `String` directly, but so far, I haven't seen any advantage in
 standardizing this (open an issue if you have thoughts):
@@ -59,6 +64,10 @@ standardizing this (open an issue if you have thoughts):
 newtype XPath = XPath String
 derive instance newtypeXPath :: Newtype XPath _
 ```
+
+We could also probably go further by typing Attributes vs Non-attribute paths,
+etc.
+
 
 ## Installation
 

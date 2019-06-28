@@ -1,6 +1,6 @@
 module Data.XPath (
     class XPathLike,
-    pathAppend, (//), pathAppendNSx, (/?)
+    pathAppend, (//), pathAppendNSx, (/?), xx
   , root
 ) where
 
@@ -18,6 +18,10 @@ class Semigroup m <= XPathLike m where
   -- | fragment. For example:
   -- | `root /? "record" /? "identifier"  == "/x:record/x:identifier"`.
   pathAppendNSx :: m -> m -> m
+
+  -- | Prepend a dummy namespace
+  xx :: m -> m
+
   -- | The root XPath representation.
   root :: m
 
@@ -29,7 +33,10 @@ instance stringXPath :: XPathLike String where
   pathAppend p1 p2 = p1 <> "/" <> p2
   pathAppendNSx p1 p2 | p1 == root  = root <> "x:" <> p2
   pathAppendNSx p1 p2 = p1 <> "/x:" <> p2
+  xx p = "x:" <> p
   root = "/"
 
 infixr 5 pathAppend as //
 infixr 5 pathAppendNSx as /?
+
+
