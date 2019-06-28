@@ -1,0 +1,23 @@
+{
+  "name": "purescript-xpath-like",
+  "homepage": "https://github.com/purescript-web/purescript-xpath-like",
+  "license": "MPL2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-web/purescript-xpath-like.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "bower.json",
+    "package.json"
+  ],
+  "devDependencies": {
+    "purescript-test-unit": "^15.0.0",
+    "purescript-console": "^4.2.0",
+    "purescript-debug": "^4.0.0",
+    "purescript-foreign": "^5.0.0"
+  }
+}
