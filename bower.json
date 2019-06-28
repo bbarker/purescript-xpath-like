@@ -1,10 +1,10 @@
 {
   "name": "purescript-xpath-like",
-  "homepage": "https://github.com/purescript-web/purescript-xpath-like",
+  "homepage": "https://github.com/bbarker/purescript-xpath-like",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript-web/purescript-xpath-like.git"
+    "url": "git://github.com/bbarker/purescript-xpath-like.git"
   },
   "ignore": [
     "**/.*",
