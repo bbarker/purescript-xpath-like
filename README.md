@@ -18,11 +18,4 @@ Module documentation is [published on Pursuit](http://pursuit.purescript.org/pac
 
 ## Tests
 
-### Run tests in a browser
-
-Do `npm run testbrowser` then open up `test/index.html` with your browser's web
-console open.
-
-### Headless testing
-
-Currently not working, but could be run with `npm run test`
+`npm run test`
