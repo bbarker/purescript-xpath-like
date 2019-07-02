@@ -3,7 +3,7 @@ module Test.Main where
 import Prelude
 
 -- import Data.Array                        ((!!), length)
-import Data.XPath                        (root, xx, (//), (/?))
+import Data.XPath                        (root, at, xx, (//), (/?))
 -- import Debug.Trace                       (traceM)
 import Effect                            (Effect)
 import Effect.Aff                        (Aff)
@@ -39,6 +39,9 @@ expectIdentWithNS = nsd <> ":" <> ident
 testIdentWithNS :: String
 testIdentWithNS = xx ident
 
+dummyAttribName :: String
+dummyAttribName = "dummyAttrib"
+
 main :: Effect Unit
 main = runTest do
   suite "path append tests" do
@@ -50,6 +53,9 @@ main = runTest do
       Assert.equal expectRootRecIdNSD testRootRecIdNSD
       tlog $ expectIdentWithNS <> " =? " <> testIdentWithNS
       Assert.equal expectIdentWithNS testIdentWithNS
+  suite "simple attribute tests" do
+    test "prepend @ on string" do
+      Assert.equal ("@" <> dummyAttribName) (at dummyAttribName)
 
 tlog :: forall a. Show a => a -> Aff Unit
 tlog = liftEffect <<< logShow
